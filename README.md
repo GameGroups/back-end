@@ -1,6 +1,10 @@
 # back-end
 Back-end repo for the GameGroups project.
 
+# Developers
+Joseph LaMoore
+Greg Clavell
+
 # Getting started
 Clone the repository, then navigate to the 'back-end' project folder in terminal.
 
