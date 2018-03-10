@@ -7,5 +7,10 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Greg Clavell",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "mysql": "^2.15.0",
+    "uuid4": "^1.0.0",
+    "vandium": "^4.7.0"
+  }
 }
