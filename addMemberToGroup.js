@@ -12,8 +12,8 @@ const connection  = mysql.createConnection({
   exports.handler = vandium.generic().handler = (event, context, callback) => {
     var groupMemberId = uuid();
     context.callbackWaitsForEmptyEventLoop = false;
-    var sql = 'INSERT INTO gamegroups.groupMembers (groupMemberId, userId, groupId, isAdmin, isActive)'
-    sql += 'VALUES ('+connection.escape(groupMemberId)+', '+connection.escape(event.userId)+', '+connection.escape(event.groupId)+', 0, 1)';
+    var sql = 'INSERT INTO gamegroups.groupMembers (groupMemberId, userId, groupId, username, isAdmin, isActive)'
+    sql += 'VALUES ('+connection.escape(groupMemberId)+', '+connection.escape(event.userId)+', '+connection.escape(event.groupId)+', '+connection.escape(event.username)+', 0, 1)';
       connection.query(sql, function (error, results, fields) {
         results.groupMemberId = groupMemberId;
         if (error) { return callback(error);}

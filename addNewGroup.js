@@ -17,8 +17,8 @@ const connection  = mysql.createConnection({
       
     var sql = 'INSERT INTO gamegroups.groups (groupId, groupName, groupDescription, isActive, region, skillLevel, timeCommitment, profileImage)'
     sql += 'VALUES ('+connection.escape(groupId)+', '+connection.escape(event.groupName)+', '+connection.escape(event.groupDescription)+', 1, '+connection.escape(event.region)+' , '+connection.escape(event.skillLevel)+' , '+connection.escape(event.timeCommitment)+' , '+connection.escape(event.profileImage)+');';
-    sql += 'INSERT INTO gamegroups.groupMembers (groupMemberId, userId, groupId, isAdmin, isActive)'
-    sql += 'VALUES ('+connection.escape(groupMemberId)+', '+connection.escape(event.userId)+', '+connection.escape(groupId)+', 1, 1)'; 
+    sql += 'INSERT INTO gamegroups.groupMembers (groupMemberId, userId, groupId, username, isAdmin, isActive)'
+    sql += 'VALUES ('+connection.escape(groupMemberId)+', '+connection.escape(event.userId)+', '+connection.escape(groupId)+', '+connection.escape(event.username)+', 1, 1)'; 
       connection.query(sql, function (error, results, fields) {
         results.groupId = groupId;
         results.groupMemberId = groupMemberId;
